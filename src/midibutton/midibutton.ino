@@ -26,7 +26,7 @@ char pass[] = "wifiwifiwifi1992";  // your network password (use for WPA, or use
 // Midi
 unsigned long t0 = millis();
 int8_t isConnected = 0;
-byte note = 45;
+byte note = 43;
 byte velocity = 55;
 byte channel = 1;
 
@@ -82,10 +82,11 @@ void setup() {
 void loop() {
 
   BTN_State = digitalRead(BTN_GPIO);
+  MIDI.read();
 
   if (BTN_State == 0) {
     // Midi
-    MIDI.read();
+   
     if ((isConnected > 0) && (millis() - t0) > 1000) {
       t0 = millis();
       MIDI.sendNoteOn(note, velocity, channel);
