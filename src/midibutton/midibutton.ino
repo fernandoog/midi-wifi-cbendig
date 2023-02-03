@@ -17,7 +17,7 @@ Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(LEDS_COUNT, LEDS_PIN, CHANNE
 u8 m_color[5][3] = {
   { 255, 0, 0 }, { 0, 255, 0 }, { 0, 0, 255 }, { 255, 255, 255 }, { 0, 0, 0 }
 };
-int delayval = 100;
+int delayval = 10;
 
 // Wifi
 char ssid[] = "HOUSE";             //  your network SSID (name)
@@ -98,7 +98,7 @@ void loop() {
         strip.show();
         delay(delayval);
       }
-      delay(500);
+      delay(50);
     }
   }
 }
